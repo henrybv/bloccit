@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  # get 'posts/index'
 
-  get 'welcome/about'
+  # get 'posts/show'
 
-  get 'welcome/contact'
+  # get 'posts/new'
+
+  # get 'posts/edit'
+  resources :posts
+
+  # get 'welcome/index'
+
+  # get 'welcome/about'
+  get 'about' => 'welcome#about'
+
+  # get 'welcome/contact'
   
-  get 'welcome/faq'
+  # get 'welcome/faq'
 
   root 'welcome#index' # root method takes hash as an argument
   # root({to: 'welcome#index'})
