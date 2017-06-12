@@ -2,13 +2,21 @@
 <html>
 <head>
   <title>Bloccit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
+		<ul>
+			<li><%= link_to "Home", welcome_index_path %></li>
+			<!-- above renders: <a href="/welcome/index">Home</a> -->
+			<li><%= link_to "About", welcome_about_path %></li>
+		</ul>
 
-<%= yield %>
+		<%= yield %>
+	</div>
 
 </body>
 </html>
