@@ -13,9 +13,19 @@
 			<li><%= link_to "Bloccit", root_path %></li>
 			<li><%= link_to "About", about_path %></li>
 			<!-- <a href="/welcome/index">Home</a> -->
-
-
 		</ul>
+ 
+		<% if flash[:notice] %>
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<%= flash[:notice] %>
+		</div>
+		<% elsif flash[:alert] %>
+		<div class="alert alert-warning">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<%= flash[:alert] %>
+		</div>
+		<% end %>
 
 		<%= yield %>
 	</div>
