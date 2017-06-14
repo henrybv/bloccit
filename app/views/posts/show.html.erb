@@ -1,5 +1,5 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<!-- <h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p> -->
 
 <!-- params -->
 <!-- Posts#show
@@ -8,4 +8,14 @@ Find me in app/views/posts/show.html.erb
 {"controller"=>"posts", "action"=>"show", "id"=>"52"} -->
 
 <h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+ 
+ <div class="row">
+   <div class="col-md-8">
+     <p><%= @post.body %></p>
+   </div>
+   <div class="col-md-4">
+ <!-- #5 -->
+     <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-success' %>
+     <%= link_to "Delete Post", @post, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this post?'} %>
+   </div>
+ </div>

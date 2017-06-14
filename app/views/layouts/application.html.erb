@@ -3,7 +3,7 @@
 <head>
 	<title>Bloccit</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
@@ -12,6 +12,7 @@
 		<ul>
 			<li><%= link_to "Bloccit", root_path %></li>
 			<li><%= link_to "About", about_path %></li>
+			<li><%= link_to "All posts", posts_path %></li>
 			<!-- <a href="/welcome/index">Home</a> -->
 		</ul>
  
