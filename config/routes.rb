@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  # get 'advertisements/index'
+
+  # get 'advertisements/show'
+
+  # get 'advertisements/new'
+
+  # get 'advertisements/create'
+  resources :advertisements
+
   # get 'posts/index'
 
   # get 'posts/show'
@@ -17,7 +26,7 @@ Rails.application.routes.draw do
   
   # get 'welcome/faq'
 
-  root 'welcome#index' # root method takes hash as an argument
+  root to: 'welcome#index' # root method takes hash as an argument
   # root({to: 'welcome#index'})
 
   # The priority is based upon order of creation: first created -> highest priority.
