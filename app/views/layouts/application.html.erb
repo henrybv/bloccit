@@ -3,19 +3,30 @@
 <head>
 	<title>Bloccit</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
 	<div class="container">
-		<ul>
+		<ul class="nav nav-tabs">
 			<li><%= link_to "Bloccit", root_path %></li>
 			<li><%= link_to "About", about_path %></li>
+			<li><%= link_to "All posts", posts_path %></li>
 			<!-- <a href="/welcome/index">Home</a> -->
-
-
 		</ul>
+ 
+		<% if flash[:notice] %>
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<%= flash[:notice] %>
+		</div>
+		<% elsif flash[:alert] %>
+		<div class="alert alert-warning">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<%= flash[:alert] %>
+		</div>
+		<% end %>
 
 		<%= yield %>
 	</div>

@@ -1,12 +1,12 @@
-<!-- <h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<!-- <h1>Questions#edit</h1>
+<p>Find me in app/views/questions/edit.html.erb</p>
  -->
 
-<h1>Edit Post</h1>
+<h1>Edit Question</h1>
  
 <div class="row">
  <div class="col-md-4">
-   <p>Guidelines for posts</p>
+   <p>Guidelines for questions</p>
    <ul>
      <li>Make sure it rhymes.</li>
      <li>Don't use the letter "A".</li>
@@ -14,14 +14,17 @@
    </ul>
  </div>
  <div class="col-md-8">
-   <%= form_for @post do |f| %>
+   <%= form_for @question do |f| %>
      <div class="form-group">
        <%= f.label :title %>
-       <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
+       <%= f.text_field :title, class: 'form-control', placeholder: "Enter question title" %>
      </div>
      <div class="form-group">
        <%= f.label :body %>
-       <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+       <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter question body" %>
+     </div>
+   	 <div class="form-group"> 
+   	 	Mark as Resolved? <%= f.check_box :resolved %>
      </div>
      <div class="form-group">
        <%= f.submit "Save", class: 'btn btn-success' %>
