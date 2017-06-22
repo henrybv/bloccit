@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Advertisement, type: :model do
+RSpec.describe Question, type: :model do
    let(:advertisement) { Advertisement.create! }
  
  # #2
