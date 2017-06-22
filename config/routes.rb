@@ -1,21 +1,18 @@
 Rails.application.routes.draw do
-  # get 'questions/index'
-  # get 'questions/show'
-  # get 'questions/new'
-  # get 'questions/edit'
-  resources :questions
-
-  # get 'advertisements/index'
-  # get 'advertisements/show'
-  # get 'advertisements/new'
-  # get 'advertisements/create'
-  resources :advertisements
-
+  # resources :topics
+  # resources :posts
   # get 'posts/index'
   # get 'posts/show'
   # get 'posts/new'
   # get 'posts/edit'
-  resources :posts
+
+  resources :topics do
+    resources :posts, except: [:index]
+  end
+
+  resources :questions
+
+  resources :advertisements
 
   # get 'welcome/index'
   # get 'welcome/about'
