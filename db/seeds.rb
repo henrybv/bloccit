@@ -11,7 +11,7 @@ require 'random_data'
 # Create Posts
 50.times do
  # #1
-  Post.create!(
+  Post.S!(
  # #2
     title:  RandomData.random_sentence,
     body:   RandomData.random_paragraph

@@ -8,12 +8,12 @@ RSpec.describe Question, type: :model do
      expect(question).to respond_to(:title)
    end
 
-   it "should respond to copy" do
-     expect(question).to respond_to(:copy)
+   it "should respond to body" do
+     expect(question).to respond_to(:body)
    end
 
-   it "should respond to price" do
-     expect(question).to respond_to(:title)
+   it "should respond to resolved" do
+     expect(question).to respond_to(:resolved)
    end
  end
 end
