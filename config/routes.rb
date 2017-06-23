@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # get 'posts/show'
   # get 'posts/new'
   # get 'posts/edit'
+  resources :users, only: [:new, :create]
 
   resources :topics do
     resources :posts, except: [:index]
