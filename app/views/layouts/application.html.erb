@@ -14,6 +14,9 @@
 			<li><%= link_to "Topics", topics_path %></li>
 			<li><%= link_to "About", about_path %></li>
 			<!-- <a href="/welcome/index">Home</a> -->
+			<div class="pull-right user-info">
+       			<%= link_to "Sign Up", new_user_path %>
+     		</div>
 		</ul>
  
 		<% if flash[:notice] %>
