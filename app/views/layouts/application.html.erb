@@ -15,10 +15,15 @@
 			<li><%= link_to "About", about_path %></li>
 			<!-- <a href="/welcome/index">Home</a> -->
 			<div class="pull-right user-info">
-       			<%= link_to "Sign Up", new_user_path %>
-     		</div>
+				<% if current_user %>
+				<%= current_user.name %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+				<% else %>
+				<%= link_to "Sign In", new_session_path %> or
+				<%= link_to "Sign Up", new_user_path %>
+				<% end %>
+			</div>
 		</ul>
- 
+		
 		<% if flash[:notice] %>
 		<div class="alert alert-success">
 			<button type="button" class="close" data-dismiss="alert">&times;</button>
