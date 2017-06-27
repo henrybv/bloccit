@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # get 'posts/edit'
   resources :users, only: [:new, :create]
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :topics do
     resources :posts, except: [:index]
   end
