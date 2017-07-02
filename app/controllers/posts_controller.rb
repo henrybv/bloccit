@@ -8,6 +8,8 @@ class PostsController < ApplicationController
   # 	end
   # end
 
+  before_action :require_sign_in, except: :show
+
   def show
   	@post = Post.find(params[:id])
   end
@@ -23,6 +25,8 @@ class PostsController < ApplicationController
   	@post.body = params[:post][:body]
     @topic = Topic.find(params[:topic_id])
     @post.topic = @topic
+
+    @post.user = current_user
 
   	if @post.save
   		flash[:notice] = "Post was saved."
